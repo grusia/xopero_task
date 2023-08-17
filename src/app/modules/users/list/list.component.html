@@ -1,0 +1,6 @@
+<ng-container *ngIf="users$ | async as users">
+  <custom-table [columns]="columns"
+                [data]="users"
+                (rowClicked)="showUserInfo($event)">
+  </custom-table>
+</ng-container>

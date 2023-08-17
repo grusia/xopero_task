@@ -1,0 +1,5 @@
+@use './common/theme-emitter/theme-emitter.component';
+
+@mixin layout($theme) {
+  @include theme-emitter.theme-emitter($theme);
+}

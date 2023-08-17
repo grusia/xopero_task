@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@use './app/shared/shared.mixin.scss' as shared;
+@use './app/layout/layout.mixin.scss' as layout;
+
+@include mat.core();
+
+$primary-color: mat.define-palette(mat.$indigo-palette, 500);
+$accent-color: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-theme: mat.define-light-theme((
+  color: (
+    primary: $primary-color,
+    accent: $accent-color
+  ),
+  typography: mat.define-typography-config(
+    $font-family: Roboto
+  )
+));
+
+@include mat.all-component-themes($my-theme);
+@include shared.shared-components($my-theme);
+@include layout.layout($my-theme);
+
+html, body, app-root{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+body {
+  margin: 0;
+}

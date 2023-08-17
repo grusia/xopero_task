@@ -1,0 +1,17 @@
+<div class="buttons-container">
+  <button mat-icon-button
+          [matTooltip]="'Add todo'" (click)="addTodo()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <button mat-icon-button
+          [matTooltip]="'Edit todo'" (click)="editTodo()">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>
+
+<ng-container *ngIf="todos">
+  <custom-table [columns]="todosColumns"
+                [data]="todos"
+                (rowClicked)="selected = $event">
+  </custom-table>
+</ng-container>

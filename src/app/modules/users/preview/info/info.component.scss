@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: row;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 5px;
+    min-width: 300px;
+  }
+
+  textarea {
+    height: 5rem;
+  }
+
+  .user-address-geo-container {
+    display: flex;
+
+    > * {
+      flex: 1;
+    }
+
+    :first-child {
+      margin-right: 5px;
+    }
+  }
+}

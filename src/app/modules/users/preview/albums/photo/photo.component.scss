@@ -1,0 +1,14 @@
+h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-dialog-content {
+  overflow: hidden;
+  text-align: center;
+
+  > img {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+}

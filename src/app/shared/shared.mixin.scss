@@ -1,0 +1,8 @@
+@use './components/custom-table/custom-table.component';
+@use './directives/select-item/select-item.mixin';
+
+@mixin shared-components ($theme) {
+  @include custom-table.custom-table($theme);
+  @include select-item.select-item($theme);
+}
+

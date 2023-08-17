@@ -1,0 +1,98 @@
+<mat-toolbar>
+<!--  <button mat-icon-button-->
+<!--          color="primary"-->
+<!--          [matTooltip]="'Edit user'"-->
+<!--          (click)="switchEditingMode()">-->
+<!--    <mat-icon>edit</mat-icon>-->
+<!--  </button>-->
+  <button mat-icon-button
+          color="primary"
+          (click)="save()"
+          [matTooltip]="'Save user'">
+<!--          [disabled]="!editingMode">-->
+    <mat-icon>save</mat-icon>
+  </button>
+  <button mat-icon-button
+          color="primary"
+          (click)="cancelEditing()"
+          [matTooltip]="'Cancel changes'">
+<!--          [disabled]="!editingMode">-->
+    <mat-icon>cancel</mat-icon>
+  </button>
+</mat-toolbar>
+
+<form [formGroup]="userForm">
+  <div class="user-info-container">
+    <h2>Personal data</h2>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput type="text" formControlName="username">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput type="text" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput type="text" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Website</mat-label>
+      <input matInput type="text" formControlName="website">
+    </mat-form-field>
+  </div>
+
+  <div formGroupName="address"
+       class="user-address-container">
+    <h2>Address</h2>
+    <mat-form-field>
+      <mat-label>Website</mat-label>
+      <input matInput type="text" formControlName="street">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Suite</mat-label>
+      <input matInput type="text" formControlName="suite">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <input matInput type="text" formControlName="city">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Zipcode</mat-label>
+      <input matInput type="text" formControlName="zipcode">
+    </mat-form-field>
+    <div formGroupName="geo"
+         class="user-address-geo-container">
+      <mat-form-field>
+        <mat-label>Lat</mat-label>
+        <input matInput type="text" formControlName="lat">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Lng</mat-label>
+        <input matInput type="text" formControlName="lng">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div formGroupName="company"
+       class="user-company-container">
+    <h2>Company</h2>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Lng</mat-label>
+      <textarea matInput type="text" formControlName="catchPhrase"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>BS</mat-label>
+      <textarea matInput type="text" formControlName="bs"></textarea>
+    </mat-form-field>
+  </div>
+
+</form>
